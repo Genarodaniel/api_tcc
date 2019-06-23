@@ -17,16 +17,15 @@ Route::delete('/data/{data}', 'DataController@destroy')->name('path.destroy');
 	Route::post('login_app','User_appController@login');
 	Route::post('register','UserController@register');
 	Route::group(['middleware' =>'auth:api'], function(){
-		Route::post('details','UserController@details');
+		Route::get('details','UserController@details');
 		Route::get('/', 'User_appController@all_users')->name('all_users');
 		Route::post('add_user','User_appController@store')->name('add_user');
 		Route::get('/{id}', 'User_appController@show')->name('single_user');
 	});
 
 });
-	Route::get('/', 'UserController@all_users')->name('all_users');
-	Route::get('/{id}', 'UserController@show')->name('single_user');
-	Route::post('/','UserController@store')->name('add_user');
+	Route::get('/users_api', 'UserController@all_users')->name('all_users');
+	Route::get('/users_api/{id}', 'UserController@show')->name('single_user');
 	 
 
 	//Route::prefix('users')->group(function(){

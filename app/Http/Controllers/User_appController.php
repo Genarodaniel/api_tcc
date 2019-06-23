@@ -53,6 +53,22 @@ class User_appController extends \App\Http\Controllers\Controller
         }
     }
 
+    public function show_email(\App\User_app $email){
+       
+        try{
+         $data =['data'=>$email];
+         return response()->json($data);
+        }
+      
+         catch(\Exception $e){
+             if(config('app.debug')){
+                 return response()->json(ApiError::errorMessage($e->getMessage(),1010));
+ 
+             }
+             return response()->json(ApiError::errorMessage('Houve um erro ao realizar a operação',1010));
+         }
+     }
+
     public function ok(){
         return ['status'=> true];
     }
