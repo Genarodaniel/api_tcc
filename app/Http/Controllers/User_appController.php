@@ -89,7 +89,7 @@ class User_appController extends \App\Http\Controllers\Controller
                 return response()->json(ApiError::errorMessage($e->getMessage(),1010));
 
             }
-            return response()->json(ApiError::errorMessage('Houve um erro ao realizar a operação',1010));
+            return response()->json(ApiError::errorMessage('Houve um erro ao realizar a operacao',1010));
         }
       
        
