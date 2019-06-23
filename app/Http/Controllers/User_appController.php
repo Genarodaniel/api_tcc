@@ -78,7 +78,7 @@ class User_appController extends \App\Http\Controllers\Controller
                 }
                 $input =$request->all();
                 $input['password'] = bcrypt($input['password']);
-                $data = User_app::create($request->all());
+                $data = User_app::create($input);
                 $success['name'] = $data->name;
     
             return response()->json(['success' => $success],$this->successStatus);
@@ -96,10 +96,11 @@ class User_appController extends \App\Http\Controllers\Controller
     }
     public function login()
     {
+       
         if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
             return response()->json(['sucess' => 'user authenticated'], 200);
         } else {
-            return response()->json(['error' => 'Unauthorised'], 401);
+            return response()->json(['error' => request('email'), 'error2'=>request('password')], 401);
         }
     }
 

@@ -7,7 +7,7 @@ Route::post('/data', 'DataController@store')->name('path.store');
 Route::get('/data/{id}', 'DataController@show')->name('path.show');
 Route::put('/data/{data}', 'DataController@update')->name('path.update');
 Route::delete('/data/{data}', 'DataController@destroy')->name('path.destroy');
-Route::get('/ok','ResidentController@all_users')->name('ok');
+//Route::get('/ok','ResidentController@all_users')->name('ok');
 
 
 
@@ -20,7 +20,7 @@ Route::get('/ok','ResidentController@all_users')->name('ok');
 		Route::post('details','UserController@details');
 		Route::get('/', 'User_appController@all_users')->name('all_users');
 		Route::post('add_user','User_appController@store')->name('add_user');
-		
+		Route::get('/{id}', 'User_appController@show')->name('single_user');
 	});
 
 });
