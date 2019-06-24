@@ -24,6 +24,7 @@ Route::delete('/data/{data}', 'DataController@destroy')->name('path.destroy');
 	});
 
 });
+Route::post('add_user','User_appController@store')->name('add_user');
 	Route::get('/users_api', 'UserController@all_users')->name('all_users');
 	Route::get('/users_api/{id}', 'UserController@show')->name('single_user');
 	 

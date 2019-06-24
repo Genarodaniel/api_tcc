@@ -43,7 +43,7 @@ return [
 
         'api' => [
             'driver' => 'passport',
-            'provider' => 'users_app',
+            'provider' => 'users',
            
         ],
         'web2'=>[
