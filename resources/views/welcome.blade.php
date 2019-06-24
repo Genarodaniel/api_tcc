@@ -59,7 +59,6 @@
             }
             .links > a{
                 border-bottom:1px solid #636b6f;
-                margin-bottom:10px;
             }
 
 
@@ -88,8 +87,12 @@
                 <div class="title m-b-md">
                     Bem vindo! 
                 </div>
+                @if (Route::has('login'))
+                @auth
+                @else
 <div class="links">Realize o<a href="{{ route('login') }}"> Login</a> ou <a href="{{ route('register')}}">Registre</a> Para continuar
-</div>
+</div> @endauth 
+@endif
                <!-- <div class="links">
                     <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://laracasts.com">Laracasts</a>
