@@ -48,15 +48,19 @@
                 font-size: 84px;
             }
 
-            .links > a {
+            .links > a, .links {
                 color: #636b6f;
-                padding: 0 25px;
+                //padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;
             }
+            .links > a{
+                border-bottom:1px solid #636b6f;
+            }
+
 
             .m-b-md {
                 margin-bottom: 30px;
@@ -83,7 +87,7 @@
                 <div class="title m-b-md">
                     Bem vindo! 
                 </div>
-<div class="links"><a href="{{ route('login') }}"> Realize o Login para continuar</a>
+<div class="links">Realize o<a href="{{ route('login') }}"> Login</a> ou <a href="{{ route('register')}}">Registre</a> Para continuar
 </div>
                <!-- <div class="links">
                     <a href="https://laravel.com/docs">Docs</a>
